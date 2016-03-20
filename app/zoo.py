@@ -18,7 +18,8 @@ class Zoo(object):
       self._name = name
 
     def add_enclosure(self, enclosure):
-      self._enclosures.append(enclosure)
+      if(self.number_of_enclosures() < self._capacity):
+        self._enclosures.append(enclosure)
 
     def number_of_enclosures(self):
       return len(self._enclosures)

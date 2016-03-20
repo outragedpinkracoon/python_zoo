@@ -27,6 +27,13 @@ class TestZoo(unittest.TestCase):
       self.zoo.add_enclosure(self.tigers)
       self.assertEqual(1, self.zoo.number_of_enclosures())
 
+    def test_cant_add_enclosures_past_capacity(self):
+      x = 0
+      while x < 20:
+        self.zoo.add_enclosure(self.tigers)
+        x += 1
+
+      self.assertEqual(10, self.zoo.number_of_enclosures())
 
 
 
