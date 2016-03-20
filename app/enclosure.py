@@ -14,7 +14,8 @@ class Enclosure(object):
       return self._capacity
 
     def add_animal(self, animal):
-      self._animals.append(animal)
+      if(self.number_of_animals() < self._capacity):
+        self._animals.append(animal)
 
     def number_of_animals(self):
       return len(self._animals)
